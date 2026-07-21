@@ -2,7 +2,7 @@
 
 ## 목표
 
-제공된 **Sprint Board**의 기존 코드를 읽고, 실제 사용 중 발생하는 문제를 재현·수정한 뒤 변경 요구사항을 반영하세요. 화면을 새로 만드는 과제가 아니라, **기존 구조를 이해하고 안전하게 고치는 과제**입니다.
+제공된 **Sprint Board**의 기존 코드를 읽고, 실제 사용 중 발생하는 문제를 재현·수정한 뒤 요구사항을 반영하세요.
 
 ## 시작하기
 
@@ -50,7 +50,7 @@ npm run test:run
 4. 서로 다른 상태의 작업 3개를 선택하고 새로고침하세요.
 5. 선택한 작업 하나를 삭제하고, 선택 작업 보기와 검색·상태 필터를 함께 사용하세요.
 
-## 제출 방법 — 처음이라면 이 순서대로
+## 제출 방법
 
 제출은 **본인 GitHub 계정의 비공개 저장소**에서 합니다. 이 스타터 저장소를 직접 수정하거나, 다른 사람의 저장소에 코드를 올리지 마세요.
 
@@ -131,7 +131,7 @@ git config --global user.email "GitHub 가입 이메일"
 1. [SUBMISSION.md](./SUBMISSION.md)를 작성하고 반드시 `git add`, `git commit`, `git push`까지 합니다.
 2. 내 GitHub 저장소의 **Actions** 탭을 엽니다.
 3. 가장 최근 **Verify assignment** 실행 결과가 초록색 체크 표시인지 확인합니다.
-4. 초록색 체크가 확인되면 제출 완료입니다. 별도의 Pull Request나 영상 제출은 필요하지 않습니다.
+4. 초록색 체크가 확인되면 제출 완료입니다.
 
 ## 제출 기준
 
@@ -139,7 +139,3 @@ git config --global user.email "GitHub 가입 이메일"
 - `SUBMISSION.md`에는 버그별 재현 절차, 원인, 수정 내용, 확인 방법을 작성해야 합니다.
 - 변경 기록이 이해 가능한 단위로 남아 있어야 합니다.
 - `.github/workflows/verify.yml`과 `src/App.test.tsx`를 삭제하거나 자동 검사를 우회하면 제출로 인정하지 않습니다.
-
-## 디자인 원칙
-
-모든 아이콘은 `lucide-react`를 사용합니다. 카드·필터·폼의 간격과 계층은 Figma Community의 Simple Design System을 참고해 직접 구현했습니다. UI kit은 Figma Community에서 추가·사용할 수 있는 공식 리소스입니다: [Figma UI kits 안내](https://help.figma.com/hc/en-us/articles/24037724065943-Start-designing-with-UI-kits).
