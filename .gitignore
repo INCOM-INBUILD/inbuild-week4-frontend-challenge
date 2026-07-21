@@ -1,0 +1,7 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.env*
+
+# 출제자 전용 문서 — 학생 배포 저장소에 포함하지 않음
+INSTRUCTOR_GUIDE.md
