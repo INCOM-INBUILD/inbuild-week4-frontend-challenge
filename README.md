@@ -50,19 +50,95 @@ npm run test:run
 4. 서로 다른 상태의 작업 3개를 선택하고 새로고침하세요.
 5. 선택한 작업 하나를 삭제하고, 선택 작업 보기와 검색·상태 필터를 함께 사용하세요.
 
-## 제출 방법
+## 제출 방법 — 처음이라면 이 순서대로
 
-1. 이 저장소로부터 **본인 이름 또는 GitHub 아이디가 포함된 비공개 저장소**를 만듭니다.
-2. 담당자 계정을 Collaborator로 초대합니다.
-3. 기본 브랜치에 최종 코드를 올립니다.
-4. [SUBMISSION.md](./SUBMISSION.md)를 작성합니다.
-5. GitHub Actions의 **Verify assignment**가 통과한 상태로 제출합니다.
+제출은 **본인 GitHub 계정의 비공개 저장소**에서 합니다. 이 스타터 저장소를 직접 수정하거나, 다른 사람의 저장소에 코드를 올리지 마세요.
+
+### 1. 내 제출 저장소 만들기
+
+1. GitHub에 로그인한 상태에서 [이 링크](https://github.com/INCOM-INBUILD/inbuild-week4-frontend-challenge/generate)를 엽니다.
+2. 화면에서 **Create a new repository**를 선택합니다.
+3. `Owner`는 **본인 계정**으로 둡니다.
+4. `Repository name`에는 아래처럼 본인 아이디가 포함되게 작성합니다.
+
+   ```text
+   inbuild-week4-frontend-challenge-내GitHub아이디
+   ```
+
+5. `Visibility`는 반드시 **Private**을 선택합니다.
+6. **Create repository**를 누릅니다.
+
+`Use this template` 버튼이 보이지 않는다면, 이 저장소의 **Fork** 버튼을 누른 뒤에도 같은 이름·Private 설정으로 만드세요.
+
+### 2. 담당자를 내 저장소에 초대하기
+
+방금 만든 **내 저장소**에서 다음을 진행합니다.
+
+1. 상단의 **Settings** 탭을 누릅니다.
+2. 왼쪽 메뉴의 **Collaborators**를 누릅니다.
+3. **Add people**을 누르고 `JoonyoungSeo`를 검색합니다.
+4. 초대 대상을 확인한 뒤 초대합니다.
+
+### 3. 내 컴퓨터에 코드 내려받기
+
+처음 한 번만 Git을 설치합니다. Windows 사용자는 **Git for Windows** 설치 후 새 PowerShell 또는 Git Bash 창을 열어 주세요.
+
+1. 내 저장소 화면에서 초록색 **Code** 버튼을 누릅니다.
+2. **HTTPS** 주소를 복사합니다.
+3. 원하는 폴더에서 아래 명령을 실행합니다. `<내 저장소 주소>`는 방금 복사한 주소로 바꿉니다.
+
+   ```bash
+   git clone <내 저장소 주소>
+   cd inbuild-week4-frontend-challenge-내GitHub아이디
+   ```
+
+4. 프로젝트를 설치하고 실행합니다.
+
+   ```bash
+   npm install
+   npm run dev
+   ```
+
+   PowerShell에서 `npm.ps1` 실행 정책 오류가 나면 아래처럼 실행합니다.
+
+   ```powershell
+   npm.cmd install
+   npm.cmd run dev
+   ```
+
+### 4. 작업 내용을 GitHub에 올리기
+
+코드를 수정한 뒤, 프로젝트 폴더에서 아래 명령을 순서대로 실행합니다.
+
+```bash
+git status
+git add .
+git commit -m "Fix task board bugs and selection"
+git push origin main
+```
+
+`git status`는 바뀐 파일을 보여주는 명령입니다. 파일을 수정할 때마다 위의 `add → commit → push` 과정을 반복해도 됩니다. 커밋 메시지는 무엇을 고쳤는지 알 수 있게 작성하세요.
+
+처음 커밋할 때 이름과 이메일을 묻는 오류가 나면, 본인 정보로 한 번만 설정합니다.
+
+```bash
+git config --global user.name "본인 이름"
+git config --global user.email "GitHub 가입 이메일"
+```
+
+### 5. 최종 제출 확인
+
+1. [SUBMISSION.md](./SUBMISSION.md)를 작성하고 반드시 `git add`, `git commit`, `git push`까지 합니다.
+2. 내 GitHub 저장소의 **Actions** 탭을 엽니다.
+3. 가장 최근 **Verify assignment** 실행 결과가 초록색 체크 표시인지 확인합니다.
+4. 초록색 체크가 확인되면 제출 완료입니다. 별도의 Pull Request나 영상 제출은 필요하지 않습니다.
 
 ## 제출 기준
 
 - `npm run build`와 `npm run test:run`이 모두 통과해야 합니다.
 - `SUBMISSION.md`에는 버그별 재현 절차, 원인, 수정 내용, 확인 방법을 작성해야 합니다.
 - 변경 기록이 이해 가능한 단위로 남아 있어야 합니다.
+- `.github/workflows/verify.yml`과 `src/App.test.tsx`를 삭제하거나 자동 검사를 우회하면 제출로 인정하지 않습니다.
 
 ## 디자인 원칙
 
